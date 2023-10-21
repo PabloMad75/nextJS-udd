@@ -1,5 +1,9 @@
 import Link from 'next/link'
 
+export const metadata = {
+    title: 'Tienda UDD'
+}
+
 const ShopLayout = ({ children }) => {
     return (
         <>
@@ -10,7 +14,7 @@ const ShopLayout = ({ children }) => {
                 <li>
                     <Link href='/shop/products'>Productos</Link>
                 </li>
-                
+
             </nav>
 
             {children}

@@ -4,11 +4,13 @@ import PostCard from "@/components/PostCard"
 const loadPost = async() => {
     const response = await fetch('https://jsonplaceholder.typicode.com/posts')
     const data = await response.json()
-    console.log(data)
+
+    await new Promise((resolve) => setTimeout(resolve, 2000))
+
     return(data)
 }
 
-const PostPage = async() => {
+const PostsPage = async() => {
 
     const posts = await loadPost()
 
@@ -16,7 +18,7 @@ const PostPage = async() => {
     return (
         <>
             <h2>Publicaciones</h2>
-            <div>
+            <div className='container px-10'>
                 {
                     posts.map((post) => (
                         <PostCard post={post} key={post.id} />
@@ -28,4 +30,4 @@ const PostPage = async() => {
     )
 }
 
-export default PostPage
+export default PostsPage
