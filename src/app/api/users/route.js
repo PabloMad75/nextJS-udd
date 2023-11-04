@@ -9,7 +9,10 @@ export const GET = async () => {
     return NextResponse.json({message: 'Usuarios Encontrados', status: 200, data})
 }
 
-export const POST = () => {
+export const POST = async(request) => {
+    
+    const data = await request.json()
+    console.log(data)
     return NextResponse.json({message: "Creando Datos"})
 }
 
